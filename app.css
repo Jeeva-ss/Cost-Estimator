@@ -1,6 +1,6 @@
 body {
 	font-family: "Open Sans", sans-serif;
-	background-color: rgba(233, 233, 255);
+	background-color: rgb(233, 223, 255);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -80,10 +80,11 @@ h1 {
 /* Toggle */
 .toggle-wrapper {
 	display: flex;
+	align-items: center;
 }
 
 .toggle-wrapper img {
-	height: 40px;
+	height: 30px;
 	margin: 0 16px;
 }
 
@@ -122,6 +123,7 @@ h1 {
 	width: 50%;
 	margin: 16px 0;
 	border-radius: 10px;
+	box-sizing: border-box;
 }
 
 .sessions-card p {
@@ -279,4 +281,84 @@ h1 {
 	width: 100%;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
+}
+
+/* Media query */
+@media only screen and (max-width: 768px) {
+	.card {
+		width: 100%;
+	}
+	.card-wrapper {
+		flex-wrap: wrap-reverse;
+	}
+	.sessions-card {
+		width: 80%;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	body {
+		padding: 16px;
+	}
+	.container {
+		padding: 0 0 16px 0;
+	}
+	.sessions-card {
+		width: 100%;
+	}
+	h1 {
+		margin: 16px 0;
+	}
+	.toggle-wrapper {
+		width: 90%;
+		justify-content: space-around;
+	}
+	.description,
+	.slider {
+		width: 90%;
+	}
+	.sessions-card {
+		border-radius: 0;
+	}
+	.tabs {
+		padding: 8px;
+	}
+	.line {
+		top: 64px;
+	}
+	.tabs .active::before {
+		width: 125%;
+		left: -12.5%;
+		bottom: -19px;
+	}
+	.tabs p {
+		font-size: 14px;
+		padding: 4px;
+	}
+	.description {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+	body {
+		padding: 0;
+	}
+	.slider .progress {
+		height: 14px;
+	}
+	.slider .bar {
+		height: 12px;
+	}
+	.slider .point {
+		top: -4px;
+		height: 18px;
+		width: 18px;
+	}
+	.slider .scale ul {
+		font-size: 12px;
+	}
+	.sessions-card .number {
+		font-size: 44px;
+	}
 }
